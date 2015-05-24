@@ -46,14 +46,13 @@ var passwordless = _.extend(passwordless, {
         this.addDelivery(
             function(tokenToSend, uidToSend, user, callback) {
                 var from = process.env.SES_EMAIL || 'jakesendar@gmail.com',
-                    text = `Hi ${user.name}!  Your Confirmation Code is ${tokenToSend}`;
+                    html = `Confirmation code for ${user.name}: <b>${tokenToSend}</b>`;
 
                 var mailOptions = {
                     from: from,
                     to: user.email,
                     subject: `Confirmation Code for ${user.name}`,
-                    text: text,
-                    html: `<b>${text}</b>`
+                    html: html
                 };
 
                 var transporter = nodemailer.createTransport({

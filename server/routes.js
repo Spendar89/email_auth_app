@@ -1,6 +1,6 @@
 var express = require('express'),
     _ = require('lodash'),
-    passwordless = require('./../server/lib/passwordless.js').start(),
+    passwordless = require('./passwordless.js').start(),
     router = express.Router();
 
 
@@ -12,7 +12,9 @@ router.post('/send_token',
     passwordless.sendToken(),
     function(req, res) {
         var authId = req.passwordless.uidToAuth;
-        res.json({authId: authId});
+        res.json({
+            authId: authId
+        });
     }
 );
 

@@ -1,10 +1,7 @@
 var gulp = require('gulp'),
-    chalk = require('chalk'),
     nodemon = require('gulp-nodemon'),
     stylish = require('jshint-stylish'),
-    jshint = require('gulp-jshint'),
-    browserify = require('gulp-browserify'),
-    path = require('path');
+    jshint = require('gulp-jshint');
 
 gulp.task('lint', function () {
     gulp.src('./*.js')
