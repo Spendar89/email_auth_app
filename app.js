@@ -3,13 +3,8 @@
 var express = require('express'),
     http = require('http'),
     path = require('path'),
-    logger = require('morgan'),
-    mongoose = require('mongoose'),
-    session = require('express-session'),
     cors = require('cors'),
     bodyParser = require('body-parser'),
-    passwordless = require('./server/lib/passwordless.js'),
-    jsxEngine = require('express-react-views'),
     routes = require('./server/routes.js'),
     app = express();
 

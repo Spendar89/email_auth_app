@@ -4,20 +4,7 @@ var gulp = require('gulp'),
     stylish = require('jshint-stylish'),
     jshint = require('gulp-jshint'),
     browserify = require('gulp-browserify'),
-    reactify = require('reactify'),
     path = require('path');
-
-gulp.task('js', function() {
-    console.log(chalk.green.bold("Building New Bundle..."))
-    gulp.src('client/app.js')
-        .pipe(browserify({
-                insertGlobals: true,
-                transform: ['reactify'],
-                debug: !gulp.env.production
-            })
-         )
-         .pipe(gulp.dest('./public/js'))
-});
 
 gulp.task('lint', function () {
     gulp.src('./*.js')
@@ -32,5 +19,4 @@ gulp.task('develop', function () {
         ignore: ['public/**']
     })
     .on('change', ['lint'])
-    gulp.watch('./client/**', ['js']);
 });
