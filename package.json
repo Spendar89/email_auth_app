@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "nodemon app.js",
+    "docker": "docker build -t spendar89/emailauthapp . && docker push spendar89/emailauthapp"
   },
   "dependencies": {
     "body-parser": "^1.12.4",
